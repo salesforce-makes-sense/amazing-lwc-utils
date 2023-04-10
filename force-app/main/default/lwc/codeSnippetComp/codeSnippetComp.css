@@ -1,0 +1,13 @@
+.container{
+    font-family: inherit;
+    height: 100%;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+.result{
+    background-color:cornsilk;
+    font-size: large;
+    -webkit-user-modify: read-write-plaintext-only;
+    display: inline-table;
+    
+}
