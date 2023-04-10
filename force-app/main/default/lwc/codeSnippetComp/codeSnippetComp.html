@@ -1,0 +1,69 @@
+<template>
+    <div class="container">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Picklist Values">
+                    <lightning-button label="Get Code" title="picklistvalues" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small">retrieve picklist values for a specific field of a specific object</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Logged In User">
+                    <lightning-button label="Get Code" title="loggedinuser" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small">retrieve the currently logged in user</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Logged In User Profile">
+                    <lightning-button label="Get Code" title="loggedinprofile" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small">retrieve the profile of the currently logged in user</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Select Option Code">
+                    <lightning-button label="Get Code" title="selectoption" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small slds-wrap">retrieve picklist label and values for Select Option</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Boilerplate code for Batch Class">
+                    <lightning-button label="Get Code" title="batchapex" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small slds-wrap">retrieve a batch class boiler plate code for an object</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Record Type Id">
+                    <lightning-button label="Get Code" title="recordtypeid" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small slds-wrap">retrieve record type id for a specific object</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+
+            <div class="slds-col slds-size_1-of-5 slds-m-around_small">
+                <lightning-card title="Trigger Framework">
+                    <lightning-button label="Get Code" title="trigger" onclick={handleClick} slot="actions"></lightning-button>
+                    <p class="slds-p-horizontal_small slds-wrap">boilerplate code for trigger class</p>
+                    <p slot="footer"><lightning-badge label="#codesnippets"></lightning-badge></p>
+                </lightning-card>
+            </div>
+        </div>
+
+        <template lwc:if={codeString}>
+            <div class="result slds-m-around_small  slds-p-around_medium">
+                <div class="slds-text-heading_small">Code Snippet: </div>
+                <br>
+                <lightning-formatted-rich-text value={codeString}></lightning-formatted-rich-text>
+            </div>
+        </template>
+    </div>
+</template>
