@@ -12,17 +12,18 @@
                 </div>
             </template>
         </div> 
-        <div class="slds-card boxTwo container boxSize">
-            <lightning-input type="datetime" class="inlineCSS" name="datetimeInput" value={dateTimeInput} label="Enter date and time"></lightning-input>
-            
+        <div class="slds-card boxTwo container boxSize slds-align_absolute-center">
+            <lightning-input type="time" class="slds-m-right_medium inlineCSS" name="datetimeInput" onchange={handleInputChange} value={dateTimeInput} label="Enter proposed time"></lightning-input>
             <lightning-combobox
                 name="timezone"
+                class="slds-m-right_medium"
                 label="Timezone"
                 value={selectedTZ}
                 placeholder="Select Timezone"
                 options={options}
                 onchange={handleChange} >
-            </lightning-combobox>
+        </lightning-combobox>
+        <lightning-button class="slds-m-top_large" onclick={handleClick} variant="brand" label="For me, this would be?" title="For me, this would be?"></lightning-button>
         </div>
     </div>
 </template>

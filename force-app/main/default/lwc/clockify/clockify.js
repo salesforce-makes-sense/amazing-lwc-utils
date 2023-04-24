@@ -20,6 +20,27 @@ export default class Clockify extends LightningElement {
         this.selectedTZ = event.detail.value;
     }
 
+    handleInputChange(event) {
+        this.dateTimeInput = event.detail.value;
+    }
+
+    handleClick(){
+        console.log(this.selectedTZ);
+        console.log(this.dateTimeInput);
+
+        // sendLocaleTime({ searchKey: this.searchKey })
+        //     .then((result) => {
+        //         this.contacts = result;
+        //         this.error = undefined;
+        //     })
+        //     .catch((error) => {
+        //         this.error = error;
+        //         this.contacts = undefined;
+        //     });
+
+
+    }
+
     @wire(getTimezoneCodes) timeData({ error, data }){
         if(data){
             var conts = data;
