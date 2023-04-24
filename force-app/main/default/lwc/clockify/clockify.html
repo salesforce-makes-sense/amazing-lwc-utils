@@ -1,0 +1,28 @@
+<template>
+    <div class="slds-box boxOne inlineCSS">
+        <div class="slds-card container boxSize">
+            <template for:each={finalMap} for:item="map">
+                <div class="inlineCSS" key={map.key}>
+                    <p class="timezone">
+                        {map.key}
+                    </p>
+                    <p class="timevalue">
+                        {map.value}
+                    </p>
+                </div>
+            </template>
+        </div> 
+        <div class="slds-card boxTwo container boxSize">
+            <lightning-input type="datetime" class="inlineCSS" name="datetimeInput" value={dateTimeInput} label="Enter date and time"></lightning-input>
+            
+            <lightning-combobox
+                name="timezone"
+                label="Timezone"
+                value={selectedTZ}
+                placeholder="Select Timezone"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+        </div>
+    </div>
+</template>
