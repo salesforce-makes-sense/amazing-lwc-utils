@@ -1,5 +1,6 @@
 import { LightningElement, wire, track } from 'lwc';
 import getTimezoneCodes from '@salesforce/apex/TimezoneUtil.fetchTimeZoneCodes';
+import checkDifference from '@salesforce/apex/TimezoneUtil.checkDifference';
 
 export default class Clockify extends LightningElement {
 
@@ -11,8 +12,7 @@ export default class Clockify extends LightningElement {
         return [
             { label: 'PST', value: 'PST' },
             { label: 'EST', value: 'EST' },
-            { label: 'IST', value: 'IST' },
-            { label: 'GST', value: 'GST' }
+            { label: 'IST', value: 'IST' }
         ];
     }
 
@@ -28,17 +28,13 @@ export default class Clockify extends LightningElement {
         console.log(this.selectedTZ);
         console.log(this.dateTimeInput);
 
-        // sendLocaleTime({ searchKey: this.searchKey })
-        //     .then((result) => {
-        //         this.contacts = result;
-        //         this.error = undefined;
-        //     })
-        //     .catch((error) => {
-        //         this.error = error;
-        //         this.contacts = undefined;
-        //     });
-
-
+        checkDifference({ timeZone: this.selectedTZ, timeInput : this.dateTimeInput })
+            .then((result) => {
+                alert(result);
+            })
+            .catch((error) => {
+                alert('Error');
+            });
     }
 
     @wire(getTimezoneCodes) timeData({ error, data }){
