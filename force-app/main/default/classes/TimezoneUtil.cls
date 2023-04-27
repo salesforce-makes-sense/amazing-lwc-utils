@@ -19,4 +19,13 @@ public class TimezoneUtil {
         String strConvertedDate = GMTDate.format('MM/dd/yyyy HH:mm:ss','Asia/Dubai');
         return strConvertedDate;
     }
+
+    @AuraEnabled(cacheable=true)
+    public static String calculateOutTime(String inTime, String workInHours){
+
+        String[] timeSplit = inTime.split(':');
+        Integer minutesToAdd = Integer.valueOf(Decimal.valueOf(workInHours) * 60);
+        return String.valueOf(Time.newInstance(Integer.valueOf(timeSplit[0]), Integer.valueOf(timeSplit[1]), 0, 0).addMinutes(minutesToAdd)).substring(0,5);
+
+    }
 }
