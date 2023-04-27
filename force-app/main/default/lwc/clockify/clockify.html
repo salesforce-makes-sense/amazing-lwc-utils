@@ -25,5 +25,10 @@
         </lightning-combobox>
         <lightning-button class="slds-m-top_large" onclick={handleClick} variant="brand" label="For me, this would be?" title="For me, this would be?"></lightning-button>
         </div>
+        <div class="slds-card boxTwo container boxSize slds-align_absolute-center">
+            <lightning-input type="time" class="slds-m-right_medium inlineCSS" name="timeInput" onchange={handleTimeInputChange} value={timeInput} label="In Time" min="06:30:00.000Z" max="08:30:00.000Z"></lightning-input>
+            <lightning-input type="number" class="slds-m-right_medium inlineCSS" name="workHours" step="0.5" onchange={handleWorkHoursChange} value={workHours} label="How long will I work today?"></lightning-input>
+            <lightning-button class="slds-m-top_large" onclick={handleTimeOut} variant="brand" label="Exit at?" title="Exit at?"></lightning-button>
+        </div>
     </div>
 </template>
